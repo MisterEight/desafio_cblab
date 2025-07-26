@@ -1,0 +1,49 @@
+# ---- Python ----
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.so
+*.egg-info/
+.eggs/
+dist/
+build/
+# ambientes virtuais
+.venv/
+venv/
+env/
+ENV/
+# caches e relatórios de testes
+.mypy_cache/
+.pytest_cache/
+.coverage
+htmlcov/
+# logs e dump de profiling
+*.log
+*.prof
+
+# ---- Airflow ----
+airflow.cfg
+airflow.db
+logs/
+
+# ---- Docker / Compose ----
+# arquivos gerados em tempo de execução ou cache
+*.pid
+*.pid.lock
+docker-compose.override.yml
+# volumes mapeados
+data_lake/
+postgres-data/
+tmp/
+# imagens exportadas
+*.tar
+
+# ---- Configurações locais e IDEs ----
+*.env
+.env.*
+.vscode/
+.idea/
+*.swp
+.DS_Store
+Thumbs.db
