@@ -1,0 +1,66 @@
+Documento especulativo sobre os campos do JSON disponibilizado,,,,
+Campo no JSON,Camada,Descrição,Tipo,Exemplo de Valor
+curUTC,root,Horário em UTC de geração do payload,timestamp,2024-05-05T06:06:06
+locRef,root,Código da loja,string,"99 CB CB (Provável loja 99, Coco Bambu)"
+guestChecks[],root,Coleção de contas (guest‑checks),array,Contém as informações sobre a conta
+guestChecks[].guestCheckId,guest_check,Identificador único do pedido,bigint,1122334455
+guestChecks[].chkNum,guest_check,Número sequencial exibido no PDV,int,1234
+guestChecks[].opnBusDt,guest_check,Data de abertura (fuso da loja),date,2024-01-01
+guestChecks[].opnUTC,guest_check,Timestamp UTC da abertura,timestamp,2024-01-01T09:09:09
+guestChecks[].opnLcl,guest_check,Timestamp local da abertura,timestamp,2024-01-01T06:09:09
+guestChecks[].clsdBusDt,guest_check,Data de fechamento (fuso da loja),date,2024-01-01
+guestChecks[].clsdUTC,guest_check,Timestamp UTC do fechamento,timestamp,2024-01-01T12:12:12
+guestChecks[].clsdLcl,guest_check,Timestamp local do fechamento,timestamp,2024-01-01T09:12:12
+guestChecks[].lastTransUTC,guest_check,Última transação UTC (item/pagamento),timestamp,2024-01-01T12:12:12
+guestChecks[].lastTransLcl,guest_check,Última transação local,timestamp,2024-01-01T09:12:12
+guestChecks[].lastUpdatedUTC,guest_check,Última atualização de cabeçalho UTC,timestamp,2024-01-01T13:13:13
+guestChecks[].lastUpdatedLcl,guest_check,Última atualização local,timestamp,2024-01-01T10:13:13
+guestChecks[].clsdFlag,guest_check,Conta está fechada?,boolean,true
+guestChecks[].gstCnt,guest_check,Número de clientes na mesa,smallint,1
+guestChecks[].subTtl,guest_check,Subtotal dos itens,decimal,109.90
+guestChecks[].nonTxblSlsTtl,guest_check,Vendas isentas de impostos,decimal,"O documento não dá exemplo, mas poderia ser algo como txblSlsTtl"
+guestChecks[].chkTtl,guest_check,Total do pedido (com impostos),decimal,109.90
+guestChecks[].dscTtl,guest_check,Total de descontos,decimal,-10.00
+guestChecks[].payTtl,guest_check,Total já pago,decimal,109.90
+guestChecks[].balDueTtl,guest_check,Saldo pendente de pagamento,decimal,"No documento é NULL, mas poderia ser algo pelo valor de subTlt/chkTtl"
+guestChecks[].rvcNum,guest_check,"Revenue‑center (bar, salão…)",smallint,101
+guestChecks[].otNum,guest_check,"Order‑type (dine‑in, delivery)",smallint,1
+guestChecks[].ocNum,guest_check,Open‑check número alternativo,int,Não é dado exemplo no documento.
+guestChecks[].tblNum,guest_check,Número físico da mesa,smallint,1
+guestChecks[].tblName,guest_check,Alias/nome da mesa,string,90
+guestChecks[].empNum,guest_check,Garçom responsáve,int,55555
+guestChecks[].numSrvcRd,guest_check,Rounds impressos para cozinha,smallint,3
+guestChecks[].numChkPrntd,guest_check,Vias da conta impressas,smallint,2
+guestChecks[].taxes[],guest_check,Coleção de taxas aplicadas,array,Contém informações sobre as taxas da conta
+guestChecks[].taxes[].taxNum,guest_check_tax,Código da taxa,smallint,28
+guestChecks[].taxes[].txblSlsTtl,guest_check_tax,Base de cálculo,decimal,119.90
+guestChecks[].taxes[].taxCollTtl,guest_check_tax,Valor arrecadado,decimal,20.81
+guestChecks[].taxes[].taxRate,guest_check_tax,Alíquota (percentual),decimal,21.00
+guestChecks[].taxes[].type,guest_check_tax,"Tipo de tributo (3=ISS, por ex.)",smallint,3
+guestChecks[].detailLines[],guest_check,Linhas detalhadas do pedido,array,Contém informações sobre os detalhes do pedido
+guestChecks[].detailLines[].guestCheckLineItemId,line_item,ID da linha,bigint,9988776655
+guestChecks[].detailLines[].rvcNum,line_item,Revenue‑center específico,smallint,123
+guestChecks[].detailLines[].dtlOtNum,line_item,Order‑type desta linha,smallint,1
+guestChecks[].detailLines[].dtlOcNum,line_item,Open‑check desta linha,int,Não foi dado exemplo no documento.
+guestChecks[].detailLines[].lineNum,line_item,Número sequencial da linha,smallint,1
+guestChecks[].detailLines[].dtlId,line_item,Identificador interno da linha,smallint,1
+guestChecks[].detailLines[].detailUTC,line_item,Timestamp UTC da linha,timestamp,2024-01-01T09:09:09
+guestChecks[].detailLines[].detailLcl,line_item,Timestamp local da linha,timestamp,2024-01-01T06:09:09
+guestChecks[].detailLines[].lastUpdateUTC,line_item,Últ. atualização UTC da linha,timestamp,2024-11-01T10:10:10
+guestChecks[].detailLines[].lastUpdateLcl,line_item,Últ. atualização local da linha,timestamp,2024-01-01T07:10:10
+guestChecks[].detailLines[].busDt,line_item,Data de negócio da linha,date,2024-01-01
+guestChecks[].detailLines[].wsNum,line_item,Workstation (caixa) gerador,smallint,7
+guestChecks[].detailLines[].dspTtl,line_item,Total exibido na tela,decimal,119.90
+guestChecks[].detailLines[].dspQty,line_item,Quantidade exibida na tela,decimal,1
+guestChecks[].detailLines[].aggTtl,line_item,Total acumulado da linha,decimal,119.90
+guestChecks[].detailLines[].aggQty,line_item,Quantidade acumulada da linha,decimal,1
+guestChecks[].detailLines[].chkEmpId,line_item,ID do funcionário na linha,bigint,10454318
+guestChecks[].detailLines[].chkEmpNum,line_item,Número do funcionário,int,81001
+guestChecks[].detailLines[].svcRndNum,line_item,Service‑round desta linha,smallint,1
+guestChecks[].detailLines[].seatNum,line_item,Assento,smallint,1
+guestChecks[].detailLines[].menuItem,line_item,Objeto com detalhes do item,object,Contém informações sobre os detalhes de itens do menu.
+guestChecks[].detailLines[].menuItem.miNum,line_item_menu,Número do item de menu,int,6042
+guestChecks[].detailLines[].menuItem.modFlag,line_item_menu,Item é modificação?,boolean,false
+guestChecks[].detailLines[].menuItem.inclTax,line_item_menu,Imposto incluso no preço,decimal,20.809091
+guestChecks[].detailLines[].menuItem.activeTaxes,line_item_menu,Lista de impostos aplicáveis,string,28
+guestChecks[].detailLines[].menuItem.prcLvl,line_item_menu,Nível de preço (Happy Hour…),smallint,3
