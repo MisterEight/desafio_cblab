@@ -32,6 +32,7 @@ erDiagram
         int       order_type_number
         int       service_rounds
         int       check_printeds
+        int       guest_count
         numeric   sub_total
         numeric   discount_total
         numeric   check_total
