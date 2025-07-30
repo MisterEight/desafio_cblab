@@ -11,6 +11,8 @@ ETL, a definição das tabelas, um DAG do Airflow e testes automatizados. Manten
 ## Estrutura do repositório
 
 - `src/parse_guestcheck.py` – Script responsável por carregar o JSON no banco.
+- `src/data/ERP.json` – Contém o arquivo JSON de entrada.
+- `src/data/mock...` – Contém o arquivo de exemplo para a ingestão dos endpoints no data lake.
 - `dags/ingest_guest_checks.py` – DAG que realiza download (mock) do JSON e chama
   o parser.
 - `sql/schema_warehouse.sql` – DDL com o modelo relacional utilizado.
@@ -49,6 +51,7 @@ ETL, a definição das tabelas, um DAG do Airflow e testes automatizados. Manten
    Construí uma estrutura Medallion (Bronze -> Prata -> Ouro) que guarda arquivos crus (raw) no datalake, tranforme os arquivos para uso pela equipe de BI e Machine learning (Prata), carregue o resultado em nosso banco de dados para fácil acesso estruturado (Ouro).
 
    O data lake é construído usando uma arquitetura baseada nos padrões utilizados no mercado, separando os arquivos baseado em endpoints, datas e store_id. É possível observar a estrutura em `datalake/`, como em `datalake/getGuestChecks/ano=2025/mes=07/dia=29/loja=0001`
+   
    ![alt text](exemplo_data_lake.png)
    
    # Configuração do Ambiente
@@ -85,7 +88,7 @@ ETL, a definição das tabelas, um DAG do Airflow e testes automatizados. Manten
       docker compose -f docker-compose-airflow.yaml up airflow-init
       docker compose -f docker-compose-airflow.yaml up -d
       ```
-   6. Acesse a interface do Airflow em `http://localhost:8080` e execute o DAG `ingest_guest_checks`.
+   6. Acesse a interface do Airflow em `http://localhost:8080` e execute o DAG `ingest_guest_checks` depois execute o DAG `ingest_endpoints`.
       ![alt text](dag_guest_check_executada.png)
       ![alt text](dag_endpoints_executada.png)
    6. Teste os testes unitários (O projeto também possuí github actions para rodar os testes automaticamente):

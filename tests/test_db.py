@@ -5,7 +5,7 @@ import json
 
 from src.parse_guestcheck import insert_guest_check, insert_line_items, main, get_conn
 
-DATA_PATH = Path('data/ERP.json')
+DATA_PATH = Path('src/data/ERP.json')
 
 # Função auxiliar para carregar um exemplo de guest check
 def _load_sample_gc():
