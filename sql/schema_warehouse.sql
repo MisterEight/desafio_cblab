@@ -92,6 +92,20 @@ CREATE TABLE line_item_payment (
     paid_amount NUMERIC(12, 2)
 );
 
+-- Emgloba os possíveis tipos de serviço que podem ter nos itens
+CREATE TABLE line_item_service_charge (
+    line_item_id BIGINT PRIMARY KEY REFERENCES line_item(line_item_id),
+    service_charge_amount NUMERIC(12,2),
+    service_charge_reason VARCHAR(100)
+);
+
+-- Emgloba os possíveis tipos de erro que podem ter nos itens
+CREATE TABLE line_item_error (
+    line_item_id BIGINT PRIMARY KEY REFERENCES line_item(line_item_id),
+    error_code VARCHAR(30),
+    error_message VARCHAR(200)
+);
+
 INSERT INTO
     store (store_id, name)
 VALUES

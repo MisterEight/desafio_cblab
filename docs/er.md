@@ -12,6 +12,8 @@ erDiagram
     LINE_ITEM ||--|| LINE_ITEM_MENU     : details
     LINE_ITEM ||--|| LINE_ITEM_DISCOUNT : discounts
     LINE_ITEM ||--|| LINE_ITEM_PAYMENT  : payments
+    LINE_ITEM ||--|| LINE_ITEM_SERVICE_CHARGE : service_charges
+    LINE_ITEM ||--|| LINE_ITEM_ERROR : errors
     STORE {
         string store_id PK
         string name
@@ -82,4 +84,14 @@ erDiagram
         int     line_item_id PK
         string  tender_type
         numeric paid_amount
+    }
+    LINE_ITEM_SERVICE_CHARGE {
+        int     line_item_id PK
+        numeric service_charge_amount
+        string  service_charge_reason
+    }
+    LINE_ITEM_ERROR {
+        int     line_item_id PK
+        string  error_code
+        string  error_message
     }
