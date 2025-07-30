@@ -5,6 +5,7 @@ from pathlib import Path
 from dotenv import load_dotenv
 SCHEMA_SQL = Path("sql/schema_warehouse.sql").read_text()
 
+# Fixture para a conexão com o banco de dados
 @pytest.fixture(scope='session')
 def db_conn():
     load_dotenv()
@@ -18,6 +19,7 @@ def db_conn():
     yield conn
     conn.close()
 
+# Fixture para limpar o banco de dados antes de cada teste
 @pytest.fixture(autouse=True)
 def clean_db(db_conn):
     with db_conn.cursor() as cur:
