@@ -1,0 +1,13 @@
+{
+  "locRef": "99 CB CB",
+  "invoiceId": 987654321,
+  "guestCheckId": 1122334455,
+  "issueDate": "2024-01-01T12:15:00Z",
+  "totalValue": 109.90,
+  "taxes": [
+    { "taxCode": 28, "base": 119.90, "amount": 20.81, "rate": 0.21 }
+  ],
+  "series": "NF‑2024‑A",
+  "accessKey": "35240199999999999999590010000098765432143210",
+  "status": "AUTHORIZED"
+}

@@ -24,12 +24,15 @@ from airflow import DAG
 from airflow.models import Variable
 from airflow.operators.python import PythonOperator
 
+# Variáveis de ambiente
+Variable.set("sample_guestcheck_json_path", "/opt/airflow/src/data/ERP.json")
+
+Variable.set("data_lake_root", "/opt/airflow/data_lake")
+
+Variable.set("store_id", "99")
 
 # Caminho do JSON de exemplo
-SAMPLE_JSON = Variable.get(
-    "sample_guestcheck_json_path",
-    default_var="/opt/airflow/src/data/ERP.json",
-)
+SAMPLE_JSON = Variable.get("sample_guestcheck_json_path", default_var="/opt/airflow/src/data/ERP.json")
 # Caminho do data lake e ID da loja
 LAKE_ROOT = Path(Variable.get("data_lake_root", default_var="/opt/airflow/data_lake"))
 # ID da loja, usado para particionar os dados

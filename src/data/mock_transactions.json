@@ -1,0 +1,16 @@
+{
+  "locRef": "99 CB CB",
+  "guestCheckId": 1122334455,
+  "transactions": [
+    {
+      "transactionId": 555001,
+      "trxUTC": "2024-01-01T12:14:30Z",
+      "tenderType": "CREDIT_CARD",
+      "cardBrand": "VISA",
+      "authorizationCode": "123456",
+      "amount": 109.90,
+      "employeeNum": 55555,
+      "wsNum": 7
+    }
+  ]
+}

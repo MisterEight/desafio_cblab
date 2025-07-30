@@ -1,0 +1,20 @@
+{
+  "guestCheckId": 1122334455,
+  "detailLines": [
+    {
+      "guestCheckLineItemId": 9988776656,
+      "lineNum": 2,
+      "detailUTC": "2024-01-01T09:12:00Z",
+      "wsNum": 7,
+      "dspTtl": 10.00,
+      "dspQty": 1,
+      "menuItem": {
+        "miNum": 7001,
+        "modFlag": false,
+        "inclTax": 1.81,
+        "activeTaxes": "28",
+        "prcLvl": 1
+      }
+    }
+  ]
+}

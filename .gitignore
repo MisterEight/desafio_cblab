@@ -41,7 +41,7 @@ tmp/
 
 # ---- Configurações locais e IDEs ----
 *.env
-.env.*
+.env
 .vscode/
 .idea/
 *.swp

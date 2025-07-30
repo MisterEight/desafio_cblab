@@ -1,0 +1,11 @@
+{
+  "chargeBackId": 445566,
+  "guestCheckId": 1122334455,
+  "locRef": "99 CB CB",
+  "reasonCode": "CARD_DECLINED",
+  "openDate": "2024-02-15",
+  "amount": 109.90,
+  "currency": "BRL",
+  "status": "OPEN",
+  "processor": "Cielo"
+}

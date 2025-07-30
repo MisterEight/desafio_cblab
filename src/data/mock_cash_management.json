@@ -1,0 +1,13 @@
+{
+  "locRef": "99 CB CB",
+  "businessDate": "2024-01-01",
+  "openingCash": 1500.00,
+  "safeDrops": [
+    { "dropId": 1, "timeUTC": "2024-01-01T14:00:00Z", "amount": 500.00 }
+  ],
+  "cashRemovals": [
+    { "removalId": 1, "timeUTC": "2024-01-01T18:00:00Z", "amount": 200.00, "reason": "Change purchase" }
+  ],
+  "closingCash": 1800.00,
+  "countedBy": 55555
+}
